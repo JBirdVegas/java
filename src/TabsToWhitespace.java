@@ -36,7 +36,8 @@ public class TabsToWhitespace {
                 // replace tabs with 4 whitespaces
                 String text_wo_tabs = text.replace("\t", "    ");
                 // send it off to have trailing whitespace trimmed
-                text_wo_tabs = trimEnd(text_wo_tabs);
+                if (text.length() != 0)
+                    text_wo_tabs = trimEnd(text_wo_tabs);
                 contents.append(text_wo_tabs);
                 contents.append(System.getProperty("line.separator"));
             }
